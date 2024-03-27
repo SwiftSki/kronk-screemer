@@ -1,4 +1,5 @@
 import discord
+from sys import exit
 from subprocess import Popen, PIPE, STDOUT
 
 #kronk id
@@ -6,7 +7,7 @@ from subprocess import Popen, PIPE, STDOUT
 #bot id
 # id=1222296083967774884
 #nab id
-# id=659653045466169346
+nab = 659653045466169346
 
 id = 659653045466169346
 botId = 1222296083967774884
@@ -35,7 +36,10 @@ class MyClient(discord.Client):
             say(message.content.replace('<@' + str(id) + '>', ''))
         
         if message.mentions[0].id == botId:
-            await message.reply('advanced commands may be a thing in the future')
+            if message.author.id == nab:
+                if message.content.replace('<@' + str(botId) + '>', '').strip() == 'update':
+                    await self.close();
+                    # exit("bot updating")
 
 #get token
 tFile = open("./token.txt")
@@ -45,4 +49,5 @@ intents = discord.Intents.default()
 intents.message_content = True
 client = MyClient(intents=intents)
 client.run(token)
-
+print("hi")
+exit(2)
