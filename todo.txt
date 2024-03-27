@@ -1,0 +1,10 @@
+installation instructions:
+1. make venv (if necessary)
+2. pip install discord
+3. package manager install espeak-ng
+4. add start file to rc.local
+
+TODO
+command to have it update itself
+    this means it will need a manager file; something written in bash
+    when it updates, it will reboot, and it should restart the bot from rc.local
