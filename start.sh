@@ -16,7 +16,8 @@ myvar=$?
 
 if [ $myvar = '12' ]; then
     echo "updating..."
-    cp token.txt ${DIRNAME}/..
+    cp ${DIRNAME}/token.txt ${DIRNAME}/../
+    cd ${DIRNAME}/
     git pull
     cp ${DIRNAME}/../token.txt ${DIRNAME}/
     ScriptLoc=$(readlink -f "$0")
