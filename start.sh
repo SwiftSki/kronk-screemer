@@ -4,6 +4,7 @@
 source ./venv/bin/activate
 python bot.py
 myvar=$?
+echo exit code: $myvar
 if [ $myvar = '2' ]; then
     echo "updating..."
     cp token.txt ../
@@ -13,7 +14,7 @@ if [ $myvar = '2' ]; then
     sudo systemctl reboot
 elif [ $myvar = '3' ]; then
     echo "shutting down"
-    sudo shutdown now
+    shutdown
 else
     echo "server stopped"
     deactivate
