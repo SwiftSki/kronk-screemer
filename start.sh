@@ -4,7 +4,7 @@
 
 #start server
 # source ./venv/bin/activate
-python bot.py
+python ./bot.py
 myvar=$?
 # echo exit code: $myvar
 if [ $myvar = '12' ]; then
