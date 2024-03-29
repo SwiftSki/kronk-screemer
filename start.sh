@@ -14,6 +14,7 @@ if [ $myvar = '2' ]; then
     sudo systemctl reboot
 elif [ $myvar = '3' ]; then
     echo "shutting down"
+    deactivate
     shutdown
 else
     echo "server stopped"
