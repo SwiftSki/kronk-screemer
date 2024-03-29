@@ -4,13 +4,13 @@ from pathlib import Path
 from subprocess import Popen, PIPE, STDOUT
 
 #kronk id
-# id=696462925874987089'
+# id=696462925874987089
 #bot id
 # id=1222296083967774884
 #nab id
 nab = 659653045466169346
 
-id = 659653045466169346
+id = 696462925874987089
 botId = 1222296083967774884
 
 pitch = 50 #0 <= pitch <= 99; default is 50
