@@ -48,10 +48,10 @@ class MyClient(discord.Client):
                 msg = message.content.replace('<@' + str(botId) + '>', '').strip()
                 # global exitcode
                 if msg == 'update':
-                    setExitCode(2)
+                    setExitCode(12)
                     await self.close()
                 elif msg == 'shut down':
-                    setExitCode(3)
+                    setExitCode(13)
                     await self.close()
 
 #get token
