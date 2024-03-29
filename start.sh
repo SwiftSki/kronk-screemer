@@ -4,12 +4,12 @@
 
 #start server
 # source ./venv/bin/activate
-python ./bot.py
+python /home/pi/Documents/kronk-screemer/start.sh
 myvar=$?
 # echo exit code: $myvar
 if [ $myvar == '2' ] || [ $myvar == '1' ]; then
-    echo "bot.py probably not found in root. Trying to run it from its proper location"
-    python /home/pi/Documents/kronk-screemer/start.sh
+    echo "bot.py probably not being run on server. Running from current directory"
+    python bot.py
     myvar=$?
 fi
 
