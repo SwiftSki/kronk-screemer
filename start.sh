@@ -4,9 +4,15 @@
 
 #start server
 # source ./venv/bin/activate
-python ./bot.py
+python bot.py
 myvar=$?
 # echo exit code: $myvar
+if [ $myvar == '2' ]; then
+    echo "bot.py probably not found in root. Trying to run it from its proper location"
+    python /home/pi/Documents/kronk-screemer/start.sh
+    myvar=$?
+fi
+
 if [ $myvar = '12' ]; then
     echo "updating..."
     cp token.txt ../
