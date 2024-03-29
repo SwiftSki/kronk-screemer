@@ -4,7 +4,7 @@
 
 #start server
 # source ./venv/bin/activate
-python /home/pi/Documents/kronk-screemer/start.sh
+python /home/pi/Documents/kronk-screemer/bot.py
 myvar=$?
 # echo exit code: $myvar
 if [ $myvar == '2' ] || [ $myvar == '1' ]; then
