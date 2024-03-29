@@ -1,5 +1,6 @@
 import discord
 from sys import exit
+from pathlib import Path
 from subprocess import Popen, PIPE, STDOUT
 
 #kronk id
@@ -55,7 +56,8 @@ class MyClient(discord.Client):
                     await self.close()
 
 #get token
-tFile = open("./token.txt")
+path = Path(__file__).parent.absolute()
+tFile = open(path + "/token.txt")
 token = tFile.readline().replace('\n', '')
 
 intents = discord.Intents.default()
