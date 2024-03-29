@@ -57,7 +57,7 @@ class MyClient(discord.Client):
 
 #get token
 path = Path(__file__).parent.absolute()
-tFile = open(path + "/token.txt")
+tFile = open(str(path) + "/token.txt")
 token = tFile.readline().replace('\n', '')
 
 intents = discord.Intents.default()
