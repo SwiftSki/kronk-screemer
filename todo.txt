@@ -5,6 +5,3 @@ installation instructions:
 4. add start file to rc.local
 
 TODO
-command to have it update itself
-    this means it will need a manager file; something written in bash
-    when it updates, it will reboot, and it should restart the bot from rc.local

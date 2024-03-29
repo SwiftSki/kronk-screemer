@@ -11,6 +11,9 @@ if [ $myvar = '2' ]; then
     cp ../token.txt ./
     deactivate
     sudo systemctl reboot
+else if [ $myvar = '3' ]; then
+    echo "shutting down"
+    sudo shutdown now
 else
     echo "server stopped"
     deactivate

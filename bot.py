@@ -15,6 +15,7 @@ botId = 1222296083967774884
 pitch = 50 #0 <= pitch <= 99; default is 50
 speed = 150 #default is 175
 
+exitcode = 0
 
 def say(text):
     term = Popen(['espeak-ng', '-p', str(pitch), '-s', str(speed)], stdin=PIPE, stdout=PIPE, stderr=STDOUT, text=True)
@@ -36,10 +37,14 @@ class MyClient(discord.Client):
             say(message.content.replace('<@' + str(id) + '>', ''))
         
         if message.mentions[0].id == botId:
-            if message.author.id == nab:
-                if message.content.replace('<@' + str(botId) + '>', '').strip() == 'update':
-                    await self.close();
-                    # exit("bot updating")
+            if message.author.id == nab or message.author.id == id:
+                msg = message.content.replace('<@' + str(botId) + '>', '').strip()
+                if msg == 'update':
+                    await self.close()
+                    exitcode = 2
+                elif msg == 'shut down':
+                    await self.close()
+                    exitcode = 3
 
 #get token
 tFile = open("./token.txt")
@@ -49,5 +54,4 @@ intents = discord.Intents.default()
 intents.message_content = True
 client = MyClient(intents=intents)
 client.run(token)
-print("hi")
-exit(2)
+exit(exitcode)
