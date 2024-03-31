@@ -10,11 +10,11 @@ from subprocess import Popen, PIPE, STDOUT
 #nab id
 nab = 659653045466169346
 
-id = 659653045466169346
+id = 696462925874987089
 botId = 1222296083967774884
 
 pitch = 50 #0 <= pitch <= 99; default is 50
-speed = 150 #default is 175
+speed = 175 #default is 175
 
 # global exitcode
 # exitcode = 0
